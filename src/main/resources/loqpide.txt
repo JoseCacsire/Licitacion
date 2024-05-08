@@ -1,0 +1,40 @@
+1.Crear el siguiente modelo usando SPRING DATA JPA considere los nombres de campos, PK, FK, tipo de dato, 
+longitud, incremento automático para los ID, y valores nulos según como se describe 
+TABLA LICITACION:
+idlicitacion int,nullable(no)
+idempresa int,nulable(no)
+fechalicitacion varchar(10)
+
+TABLA PROVEEDOR:
+idproveedor int,nullable(no)
+nombre varchar(30)
+
+DETALLELICITACION
+iddetallelicitacion int,nullable(no)
+idlicitacion 
+idproveedor
+fechapropuesta
+
+EMPRESA
+idempresa int,nullable(no)
+razonsocial varchar(10)
+direccion varchar(10)		
+
+
+2.Crear un servicio web que permita registrar una licitación (debe registrar en una sola petición las tablas licitación y detallelicitacion), considere la siguiente estructura para el ingreso de datos (se debe poder registrar para una licitación n detalles):  
+
+Datos Licitación
+	Idempresa
+	Fecha
+	Observación
+  Detalle Licitación 01
+       	Idproveedor
+    	FechaPropuesta
+  Detalle Licitación 02
+	Idproveedor
+	FechaPropuesta
+  Detalle Licitación n
+	Idproveedor
+	FechaPropuesta
+
++
