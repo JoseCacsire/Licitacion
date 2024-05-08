@@ -15,7 +15,6 @@ public class ResponseBase {
 
     private int code;
     private String message;
-    //Optional es un global,puede almacenar una listo,objeto,etc.
     private Optional data;
 
 }

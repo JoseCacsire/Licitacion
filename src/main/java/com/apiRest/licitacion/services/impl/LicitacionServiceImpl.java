@@ -9,20 +9,19 @@ import com.apiRest.licitacion.entities.Proveedor;
 import com.apiRest.licitacion.repository.DetalleLicitacionRepository;
 import com.apiRest.licitacion.repository.LicitacionRepository;
 import com.apiRest.licitacion.services.LicitacionService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
+@RequiredArgsConstructor
 @Service
 public class LicitacionServiceImpl implements LicitacionService {
-    @Autowired
-    private LicitacionRepository licitacionRepository;
-    @Autowired
-    private DetalleLicitacionRepository detalleLicitacionRepository;
+    private final LicitacionRepository licitacionRepository;
+    private final DetalleLicitacionRepository detalleLicitacionRepository;
 
     @Override
-    @Transactional//siempre usar el transactional.Asi cuando haya un error durante la ejecucion no se realize finalmente.Rollback
+    @Transactional
     public void registrarLicitacion(LicitacionRequest licitacionRequest) {
         Licitacion licitacion = new Licitacion();
         licitacion.setEmpresa(getEmpresa(licitacionRequest));
